@@ -132,6 +132,7 @@
     processOrder(){
       const thisProduct = this;
       console.log('processOrder:', thisProduct);
+      
     }
   }
 
