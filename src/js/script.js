@@ -172,11 +172,11 @@
 
           const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
 
-          if (optionImage != null && optionSelected){
+          if (optionImage && optionSelected){
             optionImage.classList.add(classNames.menuProduct.imageVisible);          
           } else {
 
-            if (optionImage != null && optionSelected == false){
+            if (optionImage && !optionSelected){
               optionImage.classList.remove(classNames.menuProduct.imageVisible);
             }
           }
