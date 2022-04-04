@@ -119,6 +119,15 @@
       thisProduct.initAmountWidget();
       thisProduct.processOrder();
     }
+
+    initAmountWidget(){
+      const thisProduct = this;
+      // [NEW] create new instance in class AmountWidget 
+      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
+      thisProduct.amountWidgetElem.addEventListener('updated', function(){
+        thisProduct.processOrder(); 
+      });
+    }
     
     renderInMenu() {
       const thisProduct = this;
@@ -244,18 +253,15 @@
       thisProduct.priceSingle = price;
 
       // update calculated price in the HTML
-      thisProduct.priceElem.innerHTML = price;
+      thisProduct.priceElem.innerHTML = price;     
+    }
       
-    }
-  
-    initAmountWidget(){
+    addToCart(){
       const thisProduct = this;
-      // [NEW] create new instance in class AmountWidget 
-      thisProduct.amountWidget = new AmountWidget(thisProduct.amountWidgetElem);
-      thisProduct.amountWidgetElem.addEventListener('updated', function(){
-        thisProduct.processOrder(); 
-      });
+
+      app.cart.add(thisProduct.prepareCartProduct());
     }
+
     prepareCartProduct(){
       const thisProduct = this;
 
@@ -265,10 +271,9 @@
         amount: thisProduct.amountWidget.value,
         priceSingle: thisProduct.priceSingle,
         price: thisProduct.priceSingle * thisProduct.amountWidget.value,
-        params: thisProduct.prepareCartProductParams()      
+        params: thisProduct.prepareCartProductParams(),      
       };
-      return productSummary;
-      
+      return productSummary;      
     }
 
     prepareCartProductParams(){
@@ -300,18 +305,11 @@
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
           // check if there is param with name of paramId in formData and if it includes optionId
           if(optionSelected) {
-            params[paramId].options = option.label;         
+            params[paramId].options[optionId] = option.label;      
           }         
         }          
       }
       return params;     
-    }
-
-
-    addToCart(){
-      const thisProduct = this;
-
-      app.cart.add(thisProduct.prepareCartProduct());
     }
   }
 
@@ -320,7 +318,7 @@
       const thisWidget = this;
 
       thisWidget.getElements(element);
-      thisWidget.setValue(thisWidget.input.value);
+      thisWidget.setValue(settings.amountWidget.defaultValue);
       thisWidget.initActions();
       //console.log('AmountWidget:', thisWidget);
       //console.log('constructor arguments:', element);
@@ -393,11 +391,12 @@
       const thisCart = this;
 
       thisCart.dom = {
+        wrapper: element,   
         toggleTrigger: element.querySelector(select.cart.toggleTrigger),
-        productList: element.querySelector(select.cart.productList)
+        productList: element.querySelector(select.cart.productList),
       };
-      thisCart.dom.wrapper = element;
-      console.log('toggleTrigger:', thisCart.dom.toggleTrigger);
+      //thisCart.dom.wrapper = element;
+      //console.log('toggleTrigger:', thisCart.dom.toggleTrigger);
     }
 
     initActions(){
@@ -408,14 +407,18 @@
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
     }
+    
     add(menuProduct){
       const thisCart = this;
 
       /* generate HTML based on template */
-      const generatedHTML = templates.cartProduct(thisCart.data);
+      const generatedHTML = templates.cartProduct(menuProduct);
       /* create element using utils.createElementFromHTML */
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
-      thisCart.dom.productList.appendChil(generatedDOM);
+      thisCart.dom.productList.appendChild(generatedDOM);
+
+      thisCart.products.push(menuProduct);
+      console.log('thisCart.products', thisCart.products);
 
       console.log('addin product:', menuProduct);
     }
@@ -424,7 +427,7 @@
   const app = {
     initMenu: function () {
       const thisApp = this;
-      console.log('thisApp.data:', thisApp.data);
+      //console.log('thisApp.data:', thisApp.data);
 
       for (let productData in thisApp.data.products) {
         new Product(productData, thisApp.data.products[productData]);
