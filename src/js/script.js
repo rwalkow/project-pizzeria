@@ -184,6 +184,7 @@
           }
         }
       }
+      //multiply pric by amount
       price *= thisProduct.amountWidget.value;
       // update calculated price in the HTML
       thisProduct.priceElem.innerHTML = price;
