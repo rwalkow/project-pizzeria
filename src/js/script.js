@@ -80,9 +80,9 @@
     },
     // CODE ADDED END
     db: {
-      //url: '//localhost:3131',
+      url: '//localhost:3131',
       // for gitpod 
-      url: 'https://3131-rwalkow-projectpizzeria-sbojeadkx5b.ws-eu38.gitpod.io', 
+      // url: 'https://3131-rwalkow-projectpizzeria-sbojeadkx5b.ws-eu38.gitpod.io', 
       // change -i7inutsa40n.ws-eu38 to current gitpod generated id and restart npm run watch
       products: 'products',
       orders: 'orders',
@@ -328,7 +328,6 @@
       const thisWidget = this;
 
       const newValue = parseInt(value);
-
       /* Add validation */
       if(thisWidget.value !== newValue && !isNaN(newValue)){
         thisWidget.value = newValue;
@@ -450,7 +449,6 @@
       let deliveryFee = settings.cart.defaultDeliveryFee;
       thisCart.totalNumber = 0;
       thisCart.subtotalPrice = 0;
-
 
       for(let product of thisCart.products){
         thisCart.totalNumber += product.amount;
@@ -599,7 +597,6 @@
           thisApp.initMenu();
         });
       console.log('thisApp.data', JSON.stringify(thisApp.data));
-
 
     },
     initCart: function(){
