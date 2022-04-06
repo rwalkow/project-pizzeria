@@ -66,11 +66,6 @@
 
     },
     // CODE ADDED END
-    db: {
-      url: '//localhost:3131',
-      products: 'products',
-      orders: 'orders',
-    },
   };
 
   const settings = {
@@ -86,6 +81,9 @@
     // CODE ADDED END
     db: {
       url: '//localhost:3131',
+      // for gitpod 
+      // url: 'https://3131-rwalkow-projectpizzeria-i7inutsa40n.ws-eu38.gitpod.io', 
+      // change -i7inutsa40n.ws-eu38 to current gitpod generated id and restart npm run watch
       products: 'products',
       orders: 'orders',
     },
