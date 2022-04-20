@@ -66,7 +66,7 @@ export const settings = {
     defaultDeliveryFee: 20,
   },
   db: {
-    //url: '//localhost:3131',
+    url: '//localhost:3131',
     // for gitpod 
     // url: 'https://3131-rwalkow-projectpizzeria-sbojeadkx5b.ws-eu38.gitpod.io',
     // change -i7inutsa40n.ws-eu38 to current gitpod generated id and restart npm run watch
