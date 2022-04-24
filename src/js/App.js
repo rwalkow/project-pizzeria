@@ -88,22 +88,23 @@ const app = {
       app.cart.add(event.detail.product);
     });
   },
-  
+
   initBooking(){
     const thisApp = this;
     const bookingElement = document.querySelector(select.containerOf.booking);
 
     thisApp.booking = new Booking(bookingElement);
   },
-  
+
   init: function () {
     const thisApp = this;
 
     thisApp.initPages();
-    thisApp.initData();      
+    thisApp.initData();
     thisApp.initCart();
+    thisApp.initBooking();
   },
-    
+
 };
 
 app.init();
