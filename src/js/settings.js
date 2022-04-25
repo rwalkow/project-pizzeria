@@ -31,13 +31,13 @@ export const select = {
     },
     datePicker: {
       wrapper: '.date-picker',
-      input: 'input[name="date"]',
+      input: `input[name="date"]`,
     },
     hourPicker: {
-      wrapper: 'hour-picker',
+      wrapper: '.hour-picker',
       input: 'input[type="range"]',
       output: '.output',
-    },    
+    },
   },
   booking: {
     peopleAmount: '.people-amount',
@@ -46,7 +46,7 @@ export const select = {
   },
   nav: {
     links: '.main-nav a',
-  },    
+  },
   cart: {
     productList: '.cart__order-summary',
     toggleTrigger: '.cart__summary',
@@ -64,16 +64,16 @@ export const select = {
     price: '.cart__product-price',
     edit: '[href="#edit"]',
     remove: '[href="#remove"]',
-  },    
+  },
 };
 export const classNames = {
   menuProduct: {
     wrapperActive: 'active',
     imageVisible: 'active',
-  },    
+  },
   cart: {
     wrapperActive: 'active',
-  },    
+  },
   booking: {
     loading: 'loading',
     tableBooked: 'booked',
@@ -83,7 +83,7 @@ export const classNames = {
   },
   pages: {
     active: 'active',
-  }    
+  }
 };
 
 export const settings = {  
@@ -91,7 +91,7 @@ export const settings = {
     defaultValue: 1,
     defaultMin: 0,
     defaultMax: 10,
-  },    
+  },
   cart: {
     defaultDeliveryFee: 20,
   },
@@ -102,8 +102,8 @@ export const settings = {
     // change -i7inutsa40n.ws-eu38 to current gitpod generated id and restart npm run watch
     products: 'products',
     orders: 'orders',
-    booking: 'booking',
-    event: 'event',
+    booking: 'bookings',
+    event: 'events',
     dateStartParamKey: 'date_gte',
     dateEndParamKey: 'date_lte',
     notRepeatParam: 'repeat=false',
