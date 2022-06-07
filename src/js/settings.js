@@ -47,7 +47,8 @@ export const select = {
     phone: '[name="phone"]',
     address: '[name="address"]',
     form: '.booking-form',
-    starter: '[name="starter"]'
+    starter: '[name="starter"]',
+    bookingOptions: '.starters-input'
   },
   nav: {
     links: '.main-nav a',
