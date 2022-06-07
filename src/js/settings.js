@@ -43,6 +43,11 @@ export const select = {
     peopleAmount: '.people-amount',
     hoursAmount: '.hours-amount',
     tables: '.floor-plan .table',
+    diningRoom: '.floor-plan',
+    phone: '[name="phone"]',
+    address: '[name="address"]',
+    form: '.booking-form',
+    starter: '[name="starter"]'
   },
   nav: {
     links: '.main-nav a',
@@ -77,6 +82,7 @@ export const classNames = {
   booking: {
     loading: 'loading',
     tableBooked: 'booked',
+    tableSelected: 'selected',
   },
   nav: {
     active: 'active',
@@ -86,7 +92,7 @@ export const classNames = {
   }
 };
 
-export const settings = {  
+export const settings = {
   amountWidget: {
     defaultValue: 1,
     defaultMin: 0,
@@ -97,7 +103,7 @@ export const settings = {
   },
   db: {
     url: '//localhost:3131',
-    // for gitpod 
+    // for gitpod
     // url: 'https://3131-rwalkow-projectpizzeria-sbojeadkx5b.ws-eu38.gitpod.io',
     // change -i7inutsa40n.ws-eu38 to current gitpod generated id and restart npm run watch
     products: 'products',
