@@ -9,6 +9,7 @@
   <link href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
   <link rel="stylesheet" href="./vendor/rangeSlider.css">
+  <link rel="stylesheet" href="./vendor/flickity.css" media="screen">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -21,6 +22,7 @@
           <h2 class="logo__subtitle">the best homemade Italian food</h2>
         </div>
         <div class="main-nav">
+          <a href="#home">Home</a>
           <a href="#order">Order</a>
           <a href="#booking">Booking</a>
         </div>
@@ -60,7 +62,10 @@
       </div>
     </div>
   </header>
-  <div id="pages">
+   <div id="pages">
+    <section id="home">
+      <div id="home-id" class="home-wrapper container"></div>
+    </section>
     <section id="order">
       <div id="product-list" class="product-list container"></div>
     </section>
@@ -68,6 +73,137 @@
       <div class="booking-wrapper container"></div>
     </section>
   </div>
+<script id="template-home-page" type="text/x-handlebars-template">
+    <div class="container">      
+      <div class="row card-buttons home-links">
+        <div class="card-1 card ">          
+          <div class="card-body"> 
+            <h1>Order online</h1>
+            <p>Delicious food delivered to your door</p>            
+            <a href="#order" class="btn">
+            <img src="./images/assets/pizza-1.jpg" alt="">                
+            </a>
+          </div>
+        </div>
+        <div class="card-2 card ">          
+          <div class="card-body"> 
+            <h1>Book a table</h1>
+            <p>Delicious food awaits you</p>               
+            <a href="#booking" class="btn">
+              <img src="./images/assets/pizza-2.jpg" alt="">                
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="opening-hours container">
+        <h2>Opening hours</h2>
+        <p>Tue-Sun, 12PM - 12AM</p>        
+      </div>
+      <div class="main-carousel">
+        <div class="carousel-cell">
+          <div class="box">
+            <div class="box-image">
+              <img src="./images/assets/pizza-3.jpg">
+            </div>          
+            <div class="box-description">
+              <h2 class="box-tittle">Lorem ipsum</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet magna at eleifend efficitur. Vestibulum convallis ultricies libero.</p>
+              <p>Author</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="box">
+            <div class="box-image">
+              <img src="./images/assets/pizza-3.jpg">
+            </div>          
+            <div class="box-description">
+              <h2 class="box-tittle">Lorem ipsum</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet magna at eleifend efficitur. Vestibulum convallis ultricies libero.</p>
+              <p>Author</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-cell">
+          <div class="box">
+            <div class="box-image">
+              <img src="./images/assets/pizza-3.jpg">
+            </div>          
+            <div class="box-description">
+              <h2 class="box-tittle">Lorem ipsum</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras aliquet magna at eleifend efficitur. Vestibulum convallis ultricies libero.</p>
+              <p>Author</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="gallery">
+          <div class="row">
+            <div class="images-container">
+              <div class="image">
+                <img src="./images/assets/pizza-4.jpg">
+                <div class="icon-container">
+                  <a href="#"><i class="fas fa-heart icon"></i></a>
+                  <a href="#"><i class="fas fa-share-alt icon"></i></i></a>
+                </div>                
+              </div>
+            </div>
+            <div class="images-container">
+              <div class="image">
+                <img src="./images/assets/pizza-5.jpg">
+                <div class="icon-container">
+                  <a href="#"><i class="fas fa-heart icon"></i></a>
+                  <a href="#"><i class="fas fa-share-alt icon"></i></i></a>
+                </div>                
+              </div>
+            </div>
+            <div class="images-container">
+              <div class="image">
+                <img src="./images/assets/pizza-6.jpg">
+                <div class="icon-container">
+                  <a href="#"><i class="fas fa-heart icon"></i></a>
+                  <a href="#"><i class="fas fa-share-alt icon"></i></i></a>
+                </div>                
+              </div>
+            </div>      
+          </div>
+          <div class="row">
+            <div class="images-container">
+              <div class="image">
+                <img src="./images/assets/pizza-7.jpg">
+                <div class="icon-container">
+                  <a href="#"><i class="fas fa-heart icon"></i></a>
+                  <a href="#"><i class="fas fa-share-alt icon"></i></i></a>
+                </div>                
+              </div>
+            </div>
+            <div class="images-container">
+              <div class="image">
+                <img src="./images/assets/pizza-8.jpg">
+                <div class="icon-container">
+                  <a href="#"><i class="fas fa-heart icon"></i></a>
+                  <a href="#"><i class="fas fa-share-alt icon"></i></i></a>
+                </div>                
+              </div>
+            </div>
+            <div class="images-container">
+              <div class="image">
+                <img src="./images/assets/pizza-9.jpg">
+                <div class="icon-container">
+                  <a href="#"><i class="fas fa-heart icon"></i></a>
+                  <a href="#"><i class="fas fa-share-alt icon"></i></i></a>
+                </div>                
+              </div>
+            </div>      
+          </div>
+          <div class="instagram">
+            <a href="#" class="instagram-link">View more on instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>     
+  </script>
   <script id="template-cart-product" type="text/x-handlebars-template">
     <li>
       <div class="widget-amount"> <!-- widget-amount -->
@@ -250,6 +386,7 @@
   -->
   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
   <script src="./vendor/rangeSlider.js"></script>
-  <script src="js/App.js" type="module"></script>``
+  <script src="./vendor/flickity.pkgd.js"></script>
+  <script src="js/App.js" type="module"></script>
 </body>
 </html>

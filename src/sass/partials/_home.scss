@@ -1,0 +1,217 @@
+.home-wrapper {
+  margin: ($base-size * 3.5) auto;
+  padding: ($base-size * 6) ($base-size * 4);
+  background: $color-light;
+  border-bottom: 1px solid lighten($color-dark, 70%);
+  border-radius: $radius;
+}
+
+/* TOP SECTION */
+
+.card-buttons {
+  width: auto;
+  position: relative;
+  justify-content: space-between;
+
+  img {
+    width: $base-size * 23;
+    height: $base-size * 10;
+    object-fit: cover;
+    border-radius: 10px;
+    z-index: 0;
+  }
+
+  a {
+    z-index: 2;
+  }  
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    color: $color-light;
+    font-size: $base-size * 1.5;
+    font-family: $font-header;
+    position: absolute;
+    left: 30%;
+    text-transform: uppercase;
+    z-index: 3;
+    pointer-events: none;
+    transition: $transition;       
+  }
+
+  p {
+    color: $color-light;
+    font-family: $font-text;
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    left: 10%;
+    top: 60%;
+    transition: $transition;
+    visibility: hidden;   
+  }
+}
+
+.card-body:hover {
+  h1 {
+    transform: translateY(-20px);
+  }
+
+  p {
+    transform: translateY(-20px);
+    visibility: visible;
+  }
+}
+
+.card-2 {
+  p {
+    left: 20%;
+  }
+}
+
+.opening-hours {
+  background-color: $color-main;
+  border-radius: 5px;
+  width: auto;
+  height: $base-size * 10;
+  color: $color-light;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  font-family: $font-header;
+
+  h2 {
+    margin: 0;
+    padding-top: 20px;
+  }
+}
+
+/* CAROUSEL */
+
+.main-carousel {
+  margin-top: $base-size * 9;
+  height: $base-size * 16;
+}
+
+.carousel-cell {
+  padding: $base-size;
+}
+
+.box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.box-description {
+  flex: 0 0 66%;
+  padding-left: $base-size * 2;
+
+  h2{
+    font-family: $font-header;
+  }
+
+  p{
+    font-family: $font-text;
+  }
+}
+
+.box-image img {
+  flex: 0 0 33%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;  
+}
+
+
+/* GALLERY */
+
+.gallery {
+  margin-top: $base-size * 9;
+  display: inline-block;
+  width: 100%;  
+}
+
+.row {
+  display: flex;   
+}
+
+.images-container { 
+  padding: 5px;
+  width: 100%;
+}
+
+.image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+
+  img {
+    height: $base-size * 14;
+    width: $base-size * 14;
+    object-fit: cover;
+    z-index: 0;
+    border-radius: 5px;
+  }
+
+  .icon-container {
+    position: absolute;
+    left: 40%;
+    visibility: hidden;
+    transition: transform 0.5s ease-out;
+    z-index: 5;
+
+    .icon {
+      color: $color-light;
+      font-size: $base-size;            
+    }   
+  }  
+}
+
+.image:hover {
+  .icon-container {
+    visibility: visible;
+    transform: scale(2);    
+  }
+
+  .icon:hover {
+    color: $color-main;
+  }
+}
+
+.image:hover::after {
+  content: '';
+  display: flex;
+  position: absolute;
+  height: $base-size * 14;
+  width: $base-size * 14;
+  opacity: 0.3;
+  background: black;
+  z-index: 3; 
+}  
+
+.instagram-link {
+  color: $color-main;
+}
+
+@media (max-width: 768px) and (max-width: 991px){
+  .row {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card-body {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+  }
+}
