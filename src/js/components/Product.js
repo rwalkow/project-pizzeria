@@ -160,11 +160,14 @@ class Product {
     thisProduct.priceElem.innerHTML = price;
   }
 
+
+
   addToCart(){
     const thisProduct = this;
     thisProduct.name = thisProduct.data.name;
     thisProduct.amount = thisProduct.amountWidget.value;
-    thisProduct.price = thisProduct.data.price;
+    thisProduct.priceSingle = thisProduct.data.price;
+    thisProduct.price = thisProduct.data.price * thisProduct.amountWidget.value;
 
     const event = new CustomEvent('add-to-cart', {
       bubbles: true,
